@@ -9,7 +9,52 @@
 </head>
 <body>
     <header>
-        <h1>this is nayeem</h1>
+        <nav class="container">
+            <nav class="navbar navbar-expand-lg bg-light">
+                <div class="container-fluid">
+                  <a class="navbar-brand" href="#"><span class="text-white bg-info p-2 rounded fw-bold">News</span> <span class="text-info fw-bold">Line</span> </a>
+                  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                  </button>
+                  <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto fw-bold">
+                      <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">News</a>
+                      </li>
+                      <li class="nav-item">
+                        <!-- Button trigger modal -->
+                        <button type="button" class="btn btn-primary"       data-bs-toggle="modal" data-bs-target="#exampleModal">
+                            Blog
+                         </button>
+  
+  <!-- Modal -->
+                    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                    <div class="modal-content">
+                    <div class="modal-header">
+                     <h5 class="modal-title" id="exampleModalLabel">Question and Answer</h5>
+                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                    <div class="modal-body">
+                        <h4>What is difference between Var, Let and Const?</h4>
+                        <p>Answer: Variable is changeable ,we can redeclare it and can change these values. Let is also changeable , we can not redeclare it but we can set values. Const is cononstent. it can not be changed</p>
+                        <h4>What is the difference between arrow function and regular function?</h4>
+                        <p>Answer: arrow function is the short version of regular function.We can do all thing using arrow function. and also we can write function in one line.</p>
+                        <h4>Why we should use template function?</h4>
+                        <p>Answer: There are many facilities of using template function. We can write multiline string easily by template string, and many other facilities.</p>
+                     </div>
+                            <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            </div>
+                            </div>
+                            </div>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </nav>
+            </nav>
     </header>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
