@@ -1,30 +1,60 @@
-const loadHeaderData = () =>{
-    url = 'https://openapi.programming-hero.com/api/news/categories'
-    fetch(url)
+const loadCatagorie =() =>{
+    fetch(`https://openapi.programming-hero.com/api/news/categories`)
     .then(res => res.json())
-    .then(data =>displayHeaderData(data.data.news_category))
-    .catch(error => console.log(error))
+    .then(data =>displayCatagories(data.data.news_category))
 }
-const displayHeaderData = (values)=>{
-    console.log(values)
-    const getCatagoriesData = document.getElementById('head-container');
-    for(const value of values){
-        const headDiv = document.createElement('div')
-        headDiv.innerHTML= `
-            <a onclick= "displayNews()" class="p-2 text-dark text-decoration-none">${value.category_name}</a>
+const displayCatagories = (catagorys) =>{
+    console.log(catagorys)
+    const newsContainer = document.getElementById('news-container')
+    for(const catagory of catagorys){
+        console.log(catagory)
+        const newsDiv = document.createElement('div')
+        newsDiv.innerHTML = `
+            <button onclick="" class ="text-decorate-none">${catagory.category_name}</button>
         `;
-        getCatagoriesData.appendChild(headDiv)
+        newsContainer.appendChild(newsDiv)
     }
 }
-const loadNews = () =>{
-    fetch('https://openapi.programming-hero.com/api/news/0282e0e58a5c404fbd15261f11c2ab6a')
+const newsLoad =()=>{
+    const url = `https://openapi.programming-hero.com/api/news/category/01`
+    fetch(url)
     .then(res => res.json())
-    .then(data =>displayNews(data.data[0]))
-    .catch(error =>console.log(error))
+    .then(data => displayNews(data.data))
 }
-const displayNews =(news)=>{
-    console.log(news)
+const displayNews = newses=>{
+     console.log(newses)
+     const detailsContainer = document.getElementById('details-container')
+     for (const news of newses){
+        console.log(news)
+        const Div = document.createElement('div');
+        Div.classList.add('col')
+        Div.innerHTML = `
+        <div class="card">
+              <img src="${news.thumbnail_url}" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">${news.title}</h5>
+                <p class="card-text">${news.details.slice(0,200)}...</p>
+              </div>
+              <div class="d-flex">
+              <div class="d-inline-flex p-2">
+              <img class="img-size" src="${news.author.img}">
+              ${news.author.name}
+              </div>
+              
+              <div class="d-inline-flex p-2">
+              <i class="fa-sharp fa-solid fa-eye ms-5"></i>
+              <p class="fw-bold ms-3">${news.total_view}
+              </div>
+              
+              <div class="d-inline-flex p-2">
+              <div class ="ms-5 btn btn-primary">Details<div>
+              </div>
+              
+              </div>
+            </div>
+        `;
+        detailsContainer.appendChild(Div)
+     }
 }
-
-
-loadHeaderData()
+newsLoad()
+loadCatagorie();
