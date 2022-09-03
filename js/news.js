@@ -47,7 +47,7 @@ const displayNews = newses=>{
               </div>
               
               <div class="d-inline-flex p-2">
-              <div class ="ms-5 btn btn-primary">Details<div>
+              <div class ="ms-5 btn btn-primary"><div>
               </div>
               
               </div>
