@@ -10,7 +10,7 @@ const displayCatagories = (catagorys) =>{
         console.log(catagory)
         const newsDiv = document.createElement('div')
         newsDiv.innerHTML = `
-            <button onclick="" class ="text-decorate-none">${catagory.category_name}</button>
+            <button onclick="newsLoad()" class ="text-decorate-none">${catagory.category_name}</button>
         `;
         newsContainer.appendChild(newsDiv)
     }
